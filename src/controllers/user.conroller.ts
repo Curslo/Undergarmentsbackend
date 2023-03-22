@@ -1,6 +1,6 @@
 import User from '../models/user.model'
 
-interface IUser {
+export interface IUser {
     name : string
     pass : string
     email : string
