@@ -24,5 +24,3 @@ export const validate = (user: IUser) => {
     return {errors, user}
 }
 
-
-['jksajkjhsdf', 'jhskljhdflkjhasld', 'jhakjshdlkjhlsdkjfh']
