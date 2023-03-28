@@ -12,6 +12,7 @@ mongoose.connect("mongodb+srv://richardkisivii:-U2PR5nfaS.XRMY@cluster0.ank6thj.
 
 const app = express();
 
+
 app.use(bodyparser.json())
 
 app.get('/', (req, res) => res.send("Welcome to my API"))
