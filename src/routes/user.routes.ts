@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     //Call user controller to crreate
     const newUser = create(createUser)
     //Res back to user
-    res.status(201).json( newUser)
+    res.status(201).json({msg: 'User has been created succesfully'})
     } catch (error) {
         res.status(500).send(error)
     }
