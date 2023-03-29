@@ -1,15 +1,25 @@
 import mongoose from "mongoose";
 
+//import validater from 'validater'
+
 import bcrypt from "bcrypt"
 
 const userSchema = new mongoose.Schema({
-    name : {
+    fname : {
         type : String, 
-        required : [true, 'Please enter your name']
+        required : [true, 'Please enter your first name']
+    },
+    sname : {
+        type : String, 
+        required : [true, 'Please enter your second name']
+    },
+    birth : {
+        type : Date,
+        required : true
     },
     email : {
         type : String, 
-        required : true,
+        required : [true, 'Please enter an email'],
         unique : true
     },
     pass : {

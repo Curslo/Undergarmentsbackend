@@ -1,9 +1,11 @@
 import User from '../models/user.model'
 
 export interface IUser {
-    name : string
+    fname : string
+    sname : string
     pass : string
     email : string
+    birth : Date
 }
 export const create = (createUser: IUser) => {
     //Create new user using the mongoose model

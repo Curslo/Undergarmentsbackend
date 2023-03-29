@@ -16,7 +16,7 @@ export const validate = (user: IUser) => {
         errors.push("Passowrd must be grater than 8 characters with an uppercase, lowercase and a number")
     }
     //check that name is less than 8 char
-    if(!user.name.match(NAME_VALIDATOR)) {
+    if(!user.fname || !user.sname.match(NAME_VALIDATOR)) {
 
         errors.push("Name must be greater than 8 characters")
     }
