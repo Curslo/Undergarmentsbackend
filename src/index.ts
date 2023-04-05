@@ -15,6 +15,7 @@ const app = express();
 
 app.use(bodyparser.json())
 
+
 app.get('/', (req, res) => res.send("Welcome to my API"))
 
 app.use('/users', userRouter)
