@@ -1,5 +1,9 @@
 import User from '../models/user.model'
 
+import jwt from 'jsonwebtoken'
+
+import cookieParser from 'cookie-parser'
+
 export interface IUser {
     fname : string
     sname : string
@@ -7,12 +11,22 @@ export interface IUser {
     email : string
     birth : Date
 }
+
+const maxAge = 3*24*60*60
+
+const createToken= (id: any) => {
+    return jwt.sign({id}, '12062000Curslo', {expiresIn: maxAge})
+}
+
 export const create = (createUser: IUser) => {
     //Create new user using the mongoose model
     try {
         const user = new User(createUser)
     //Save the new created user
     user.save()
+    //JWT token
+    const token = createToken(user._id);
+    res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge*1000});
     //Respond back to the new user
     return user
     } catch (error: any) {
