@@ -18,11 +18,9 @@ app.use(cookieParser());
 
 app.use(bodyparser.json())
 
-
 app.get('/', (req, res) => res.send("Welcome to my API"))
 
 app.use('/users', userRouter)
-
 
 app.use('/products', productRouter)
 
@@ -32,7 +30,7 @@ app.listen(PORT, () =>
 console.log(`Server Running on port: http://localhost:${PORT}`));
 
 //cookies
-/*app.get('/set-cookies', (req, res) => {
+app.get('/set-cookies', (req, res) => {
     //res.setHeader('set-Cookie', 'newUser=true');
     res.cookie('newUser', false, {maxAge: 1000*60*60*24, httpOnly: true});
     res.cookie('isEmployee', true, {maxAge: 1000*60*60*24, httpOnly: true});
@@ -44,4 +42,4 @@ app.get('/read-cookies', (req, res) => {
     console.log(cookies.newUser);
 
     res.json(cookies);
-})*/
+})
