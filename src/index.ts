@@ -10,9 +10,12 @@ import mongoose from 'mongoose';
 
 import cookieParser from 'cookie-parser';
 
+//connecting to database
 mongoose.connect("mongodb+srv://richardkisivii:-U2PR5nfaS.XRMY@cluster0.ank6thj.mongodb.net/ecomm?retryWrites=true&w=majority").then(() => console.log('Connected to database'))
 
+//Initializing express
 const app = express();
+
 
 app.use(cookieParser());
 
@@ -24,6 +27,8 @@ app.use('/users', userRouter)
 
 app.use('/products', productRouter)
 
+
+//Server
 const PORT = 3000;
 
 app.listen(PORT, () => 
